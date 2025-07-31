@@ -19,7 +19,6 @@ const hotelSchema = new Schema<IHotel>(
     address: { type: String, required: true },
     city: { type: String, required: true },
     country: { type: String, required: true },
-    amenities: [{ type: String }],
     images: [{ type: String }],
     roomsAvailable: { type: Number, required: true },
     createdBy: { type: Schema.Types.ObjectId, ref: "User", required: true },
