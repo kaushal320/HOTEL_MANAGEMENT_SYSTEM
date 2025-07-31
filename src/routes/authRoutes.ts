@@ -15,11 +15,5 @@ router.post("/register", register);
 router.post("/login", login);
 router.post("/google", googleLogin);
 router.post("/logout", logout);
-router.get("/me", protect, getCurrentUser);
-
-// Example: only admins can access
-router.get("/admin-only", protect, allowRoles("admin"), (req, res) => {
-  res.json({ msg: "Hello Admin 👑" });
-});
 
 export default router;

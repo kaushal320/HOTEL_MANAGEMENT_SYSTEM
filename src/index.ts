@@ -5,6 +5,8 @@ import dotenv from "dotenv";
 import morgan from "morgan";
 import connectDB from "./config/db.js";
 import authRoutes from "./routes/authRoutes.js";
+import hotelRoutes from "./routes/hotelRoutes.js";
+import roomRoutes from "./routes/roomRoutes.js";
 dotenv.config();
 const app = express();
 
@@ -14,13 +16,13 @@ app.use(express.json());
 
 app.use(cookieParser());
 
-
 //database call
 connectDB();
 
 //routes
 app.use("/api/auth", authRoutes);
-
+app.use("/api/hotel", hotelRoutes);
+app.use("/api/room", roomRoutes);
 if (process.env.NODE_ENV === "development") {
   app.use(morgan("dev"));
   console.log(`Mode: ${process.env.NODE_ENV}`);
