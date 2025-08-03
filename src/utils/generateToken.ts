@@ -15,3 +15,4 @@ export const generateTokenAndSetCookie = (userId: string, res: Response) => {
 
   return token;
 };
+
